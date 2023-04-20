@@ -1,0 +1,13 @@
+.page__header {
+  padding-block: 1em;
+  background-color: $white;
+  @include shadow;
+}
+.brand {
+  @include flex;
+  justify-content: center;
+  img {
+    border-radius: $border-radius;
+    vertical-align: middle;
+  }
+}

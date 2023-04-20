@@ -1,0 +1,110 @@
+/*****************
+**** VARS ****/
+$green-dark: #253621;
+$green: #86c345;
+$blue: #00a5be;
+$unknown: #ecd06f;
+$dead: #d63d2e;
+$dark: #2f362f;
+$white: #fff;
+$f-bold: 700;
+$border-radius: 0.5rem;
+$box-shadow: 0 2px 5px rgba($dark, 0.4);
+
+/*****************
+**** MIXINS ****/
+@mixin shadow {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+/*****************
+**** COMMON ****/
+:root {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Itim", Helvetica, sans-serif;
+  background-color: #ccc;
+  font-size: 1rem;
+  line-height: 1.4;
+
+  // display: grid;
+  // justify-content: center;
+  // align-items: center;
+  // background-image: url(../img/logo-created.png), url(../img/anim.gif);
+  // background-position: center top, center bottom;
+  // background-repeat: no-repeat, no-repeat;
+  // background-size: contain;
+  // background-color: black;
+}
+
+h1 {
+  margin-left: 1em;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+
+.container,
+.container--inner {
+  padding-inline: 1em;
+}
+
+/*************
+**** large */
+@media all and (min-width: 1120px) {
+  :root {
+    font-size: 20px;
+  }
+  .container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1650px) {
+  :root {
+    font-size: 22px;
+  }
+  .container {
+    max-width: 1596px;
+    &--inner {
+      max-width: 1020px;
+      margin: 0 auto;
+    }
+  }
+}

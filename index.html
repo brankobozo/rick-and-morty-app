@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Rick and Morty API</title>
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+
+    <script defer type="module" src="src/js/controller.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container--inner">
+        <div class="hero__content">
+          <img
+            src="src/img/logo.png"
+            alt="Rick and Morty logo"
+            class="hero__img"
+          />
+          <button class="btn btn--cta">Go!</button>
+          <p>Browse between 826 favorite Rick and Morty characters.</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="app">
+      <div class="container container--inner">
+        <section class="pagination">
+          <div class="pagination__go">
+            <label for="pagination__num" class="pagination__label"
+              >Go to Page</label
+            >
+            <input
+              type="number"
+              name="pagination__num"
+              id="pagination__num"
+              class="pagination__num"
+              min="1"
+              max="42"
+            />
+            <button class="btn btn--pagination">Go</button>
+          </div>
+          <ul class="pagination__list"></ul>
+        </section>
+        <section class="cards__container"></section>
+      </div>
+    </main>
+
+    <article class="modal hidden"></article>
+    <div class="overlay hidden"></div>
+  </body>
+</html>

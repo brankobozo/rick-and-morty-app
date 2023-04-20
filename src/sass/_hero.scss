@@ -1,0 +1,21 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  text-align: center;
+  background: url("../img/bg_gray.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__img {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .btn {
+    margin-block: 3em 4em;
+  }
+}

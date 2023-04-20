@@ -1,0 +1,266 @@
+/*****************
+**** APP ****/
+.app {
+  display: none;
+}
+
+/*****************
+**** CARDS ****/
+.cards__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+}
+.card {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background-color: $white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+  &__caption {
+    padding: 2em 0.5em;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  &:hover {
+    transform: translateY(-7px);
+  }
+}
+
+/*****************
+**** PAGINATION ****/
+
+.pagination {
+  font-size: 0.875em;
+  margin-top: 2em;
+  span {
+    font-weight: 2em;
+  }
+  &__list {
+    margin-block: 1em 2em;
+    display: flex;
+    align-items: center;
+    font-weight: $f-bold;
+  }
+  &__item {
+    text-align: center;
+    padding-block: 1em;
+    flex: 1;
+  }
+  &__link {
+    cursor: pointer;
+    &--prev {
+      text-align: left;
+    }
+    &--next {
+      text-align: right;
+    }
+    &:hover {
+      color: $green;
+    }
+  }
+  &__go {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+  &__num {
+    border: none;
+    border-radius: $border-radius;
+    padding: 0.5em;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__label {
+    text-align: right;
+  }
+}
+
+.btn {
+  border: none;
+  padding: 0.5em 1.25em;
+  border-radius: $border-radius;
+  background-color: $green;
+  color: $white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &--cta {
+    font-size: 1.1rem;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.disabled {
+  font-weight: normal;
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: auto;
+}
+
+/*****************
+**** MODAL ****/
+.modal {
+  position: fixed;
+  width: 80%;
+  left: 10%;
+  top: 20%;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background-color: $dark;
+  color: $white;
+  z-index: 2;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__heading {
+    flex: 2 1 0%;
+    img {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      display: block;
+      width: 100%;
+      height: 300px;
+      object-position: center center;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    flex: 3 1 0%;
+    padding: 1.5em 1.5em 0.5em;
+    display: flex;
+    flex-direction: column;
+  }
+  &__section {
+    margin-bottom: 1rem;
+  }
+  &__subtitle {
+    color: $blue;
+  }
+  &__status {
+    display: flex;
+    align-items: center;
+    &-icon {
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-right: 0.35rem;
+      border-radius: 50%;
+    }
+  }
+}
+.alive {
+  background-color: $green;
+}
+.unknown {
+  background-color: $unknown;
+}
+.dead {
+  background-color: $dead;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+.hidden {
+  display: none;
+}
+
+/*****************
+**** LIKE BTN ****/
+.like__btn {
+  flex: 0 0 30px;
+  margin-left: auto;
+  height: 30px;
+  transition: all 0.3s ease;
+  &--1 {
+    fill: $green;
+  }
+  &--2 {
+    fill: $white;
+  }
+  &--1,
+  &--2 {
+    fill-rule: evenodd;
+  }
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+/*****************
+**** SPINNER ****/
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #cef;
+  border-color: #cef transparent #cef transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+@media all and (min-width: 720px) {
+  .modal {
+    width: 50%;
+    left: 25%;
+    &__inner {
+      flex-direction: row;
+    }
+    &__heading img {
+      height: 100%;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: $border-radius;
+    }
+  }
+}
